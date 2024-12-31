@@ -23,15 +23,20 @@ Modeling and solving the Flexible Job Shop Scheduling Problem (FJSP) is critical
 ![System architecture](./Assets/archi.png) 
 <img src="./Assets/archi.png" width="800" alt="System architecture">
 
-## System model of MT-FJSP
+Makespan with varied Transport Time + Processing/Standy Energy Consumption + Transport Energy Consumption
+-->
+
+
+## System model of Multi-target/Distributed job shop collabration FJSP: 
 <img src="./Assets/model.png" width="600" alt="System model">
 
+<!--
 ## Overview of E2E-MAPPO
 ![Overview](./Assets/method.png)
 -->
 
-## Main results
-![Main result1](./Assets/table1.png) 
+## Other results
+![Comparing to classical Priority Disppatch Rules](./Assets/table-PDRs.png) 
 ![Main result2](./Assets/table2.png) 
 ![Main result3](./Assets/table3.png) 
 
