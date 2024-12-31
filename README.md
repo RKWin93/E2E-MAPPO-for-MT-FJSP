@@ -17,7 +17,7 @@ Modeling and solving the Flexible Job Shop Scheduling Problem (FJSP) is critical
 ## Poster 
 
 <!--
-## System architecture of MT-FJSP in Cloud-edge manufacturing paradigm
+## System architecture of MT-FJSP in Cloud-edge manufacturing paradigm -->
 <!-- ![System architecture](./Assets/archi.png) -->
 <img src="./Assets/archi.png" width="800" alt="System architecture">
 
@@ -27,7 +27,6 @@ Modeling and solving the Flexible Job Shop Scheduling Problem (FJSP) is critical
 ## Overview of E2E-MAPPO
 ![Overview](./Assets/method.png)
 
--->
 
 ## Main results
 ![Main result1](./Assets/table1.png) 
