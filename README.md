@@ -10,6 +10,7 @@ Official implementation for "End-to-end Multi-target Flexible Job Shop Schedulin
 ## Updates
 
 - **10.20.2024**: Accept! Code is coming soon !!!
+- **12.31.2024**: Update Poster for quick understanding.
 
 ## Introduction 
 Modeling and solving the Flexible Job Shop Scheduling Problem (FJSP) is critical for modern manufacturing. However, existing works primarily focus on the time-related makespan target, often neglecting other practical factors such as transportation. To address this, we formulate a more comprehensive multi-target FJSP that integrates makespan with varied transportation times and the total energy consumption of processing and transportation. The combination of these multiple real-world production targets renders the scheduling problem highly complex and challenging to solve. To overcome this challenge, this paper proposes an end-to-end multi-agent proximal policy optimization (PPO) approach. First, we represent the scheduling problem as a disjunctive graph with designed features of sub-tasks and constructed machine nodes, additionally integrating information of arcs denoted as transportation and standby time, respectively. Next, we use a graph neural network (GNN) to encode features into node embeddings, representing the states at each decision step. Finally, based on the vectorized value function and local critic networks, the PPO algorithm and disjunctive graph simulation environment iteratively interact to train the policy network. Our extensive experimental results validate the performance of the proposed approach, demonstrating its superiority over the state-of-the-art in terms of high-quality solutions, online computation time, stability, and generalization.
@@ -24,6 +25,11 @@ Modeling and solving the Flexible Job Shop Scheduling Problem (FJSP) is critical
 <img src="./Assets/archi.png" width="800" alt="System architecture">
 
 Makespan with varied Transport Time + Processing/Standy Energy Consumption + Transport Energy Consumption
+
+## Main results ()
+
+### Industrial dataset
+![industrial](./assets/Industrial.png) 
 -->
 
 
@@ -47,7 +53,7 @@ Given that most public benchmarks can not fully cover all factors in the propose
 ![Training(Seed=0),Evaluating(Seed=1) and Testing(Seed=3)](./Assets/instance.png) 
 
 The Simulated Environments for Disjunctive Graph of MT-FJSP:
-![ENV](./Assets/env.gif) 
+![ENV](./Assets/加速.gif) 
 
 ## How to Run
 ### Generate the dataset 
@@ -80,10 +86,7 @@ xxxxxxxx
 ```
 
 
-## Main results ()
 
-### Industrial dataset
-![industrial](./assets/Industrial.png) 
 
 
 ## We provide the reproduction of  [here]() 
