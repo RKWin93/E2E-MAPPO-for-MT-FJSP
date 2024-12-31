@@ -37,9 +37,17 @@ Makespan with varied Transport Time + Processing/Standy Energy Consumption + Tra
 
 ## Other results
 ![Comparing to classical Priority Disppatch Rules](./Assets/table-PDRs.png) 
+<!--
 ![Main result2](./Assets/table2.png) 
 ![Main result3](./Assets/table3.png) 
+-->
 
+## Dataset
+Given that most public benchmarks can not fully cover all factors in the proposed MT-FJSP (i.e., 𝑡𝑖, 𝑗,𝑘,𝑝𝑖, 𝑗,𝑘, and 𝑡𝑡𝑘,𝑘ˆ denoted in §III-B1), we randomly generate synthetic instances following SOTA related works.
+![Training(Seed=0),Evaluating(Seed=1) and Testing(Seed=3)](./Assets/instance.png) 
+
+The Simulated Environments for Disjunctive Graph of MT-FJSP:
+![ENV](./Assets/env.gif) 
 
 ## How to Run
 ### Generate the dataset 
