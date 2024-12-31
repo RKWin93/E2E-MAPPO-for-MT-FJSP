@@ -53,7 +53,8 @@ Given that most public benchmarks can not fully cover all factors in the propose
 ![Training(Seed=0),Evaluating(Seed=1) and Testing(Seed=3)](./Assets/instance.png) 
 
 The Simulated Environments for Disjunctive Graph of MT-FJSP:
-![ENV](./Assets/加速.gif) 
+![ENV-Action](./Assets/加速1.gif) 
+![ENV-DG+Gantt](./Assets/加速2.gif) 
 
 ## How to Run
 ### Generate the dataset 
