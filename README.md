@@ -50,10 +50,10 @@ Makespan with varied Transport Time + Processing/Standy Energy Consumption + Tra
 
 ## Dataset
 Given that most public benchmarks can not fully cover all factors in the proposed MT-FJSP (i.e., 𝑡𝑖, 𝑗,𝑘,𝑝𝑖, 𝑗,𝑘, and 𝑡𝑡𝑘,𝑘ˆ denoted in §III-B1), we randomly generate synthetic instances following SOTA related works.
-(Training(Seed=0),Evaluating(Seed=1) and Testing(Seed=3))
+{Training(Seed=0),Evaluating(Seed=1) and Testing(Seed=3)}
 ![Training(Seed=0),Evaluating(Seed=1) and Testing(Seed=3)](./Assets/instance.png) 
 
-The Simulated Environments for Disjunctive Graph of MT-FJSP {6 jobs(each 6 sub-tasks) * 6 machines * 2 job shops}:
+The Simulated Environments for Disjunctive Graph of MT-FJSP {4 jobs(each 4 sub-tasks) * 4 machines * 2 job shops}:
 ![ENV-Action](./Assets/加速1.gif) 
 ![ENV-DG+Gantt](./Assets/加速2.gif) 
 
