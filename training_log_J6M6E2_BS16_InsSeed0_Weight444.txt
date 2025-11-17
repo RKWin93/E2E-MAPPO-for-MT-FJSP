@@ -1,0 +1,89 @@
+
+==========================================================================================================================================================================================================================================================
+[2025-05-01 02:30:27] - Training/buffer_done/update_global_critic_net: critic_loss=0.5996947884559631 
+[2025-05-01 02:30:27] - Training/buffer_done/actor_loss: job_actor_loss=torch.Size([36, 16]), machine_actor_loss=torch.Size([36, 16]) 
+[2025-05-01 02:30:27] - Training/buffer_done/update_actor_net: loss = job_actor_loss.mean() + machine_actor_loss.mean() = 0.6549057960510254 
+[2025-05-01 02:30:28] - Training/buffer_done/update_1_epoch_done: --------Update K_epoch: 5/5, ReplayBuffer: every 36 in range(0, 180),  job_actor_loss=0.09525658935308456, machine_actor_loss=0.05801527574658394, global_critic_loss=0.4891173541545868-------- 
+[2025-05-01 02:30:28] - Training/buffer_done/update_all_epoch_done: Mean: job_actor_loss=0.10595271736383438, machine_actor_loss=0.0855979397892952, global_critic_loss=0.5118188858032227 
+[2025-05-01 02:30:28] - Training/buffer_done/update_lr_decay: lr_job=0.00019536615155531985, lr_machine=0.00019536615155531985, lr_critic=0.00019536615155531985 
+[2025-05-01 02:30:29] - Training/while/buffer_done/update_done: Update Done on episode 4000/4000 
+[2025-05-01 02:30:29] - Training/while/done: Trajectory Done (step = tasks) episode 4000/4000  
+[2025-05-01 02:30:29] - Evaluation/eval_instance_last: va_ability_t=(36, 6), va_ability_p=(36, 6), va_ability_tt=(6, 6), va_edge_info=(2, 3) 
+[2025-05-01 02:30:29] - Evaluation/done: Objective=697.5102566610717, mk=498.3542745393412, pt=511.44927756208574, transT=192.1373705955068, idleT=637.9034042534989 
+[2025-05-01 02:30:29] - Evaluation/last_instance: Objective=697.5102566610717, eval_obj_gap=0.5201834436089814, mk=498.3542745393412, pt=511.44927756208574, transT=192.1373705955068, idleT=637.9034042534989 
+[2025-05-01 02:30:29] - Evaluation/100instances/each_episode_result: ----------episode=3999, obj_100ins_mean=722.54016340293, mk_100ins_mean=541.1907658253127, pt_100ins_mean=524.9884007897216, transT_100ins_mean=264.5969221640837, idleT_100ins_mean=607.8727808102489------------------------ 
+[2025-05-01 02:31:09] - Training/resample_instance: --------------------Instance Sample：12800/12800--------------- 
+[2025-05-01 02:31:09] - Training/current_instance: bs_idx=799, instance_bs_dict['t'].shape=torch.Size([16, 36, 6]) 
+[2025-05-01 02:31:09] - Training/Parallel_env/get_batch_scenario: job=6, machine=6, edge=2, tasks=36 
+[2025-05-01 02:31:09] - Training/Parallel_env/get_batch_info: self.ability_instance=(16, 4), t[0].shape=(36, 6), p[0].shape=(36, 6), transT[0].shape=(6, 6) 
+[2025-05-01 02:31:09] - Training/resample_status: Now is paral_env.get_batch + paral_env.init_RewardScaling_sameBATCH 
+[2025-05-01 02:31:15] - Training/while/buffer_done/update: ++++++++++++++++++++++++++++ ppo update 800/800 buffer_size=180||mini_bs=36||Date_freq_epi=5 ++++++++++++++++++++++++++++ 
+[2025-05-01 02:31:15] - Training/buffer_done/adv_targetV: Calculate the Local/Global Adv and TargetV based on GAE 
+[2025-05-01 02:31:15] - Evaluation/save model.pth: Final and TOP3 Best model parameters saved. Best_model=(-692.1314858424421, '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_job_actor_J6M6E2_EP2610_.pth', '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_machine_actor_J6M6E2_EP2610_.pth', '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_global_critic_J6M6E2_EP2610_.pth') 
+[2025-05-01 02:31:15] - Training/All_episode/save_buffer_trajectory: save trajectory in /remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trajectory/Trajectory_4000_J6M6E2_Seed0_BS16_Weight442.pkl.pkl' 
+
+==========================================================================================================================================================================================================================================================
+[2025-05-07 03:31:57] - Training/buffer_done/actor_loss: job_actor_loss=torch.Size([36, 16]), machine_actor_loss=torch.Size([36, 16]) 
+[2025-05-07 03:31:58] - Training/buffer_done/update_actor_net: loss = job_actor_loss.mean() + machine_actor_loss.mean() = -0.7949272394180298 
+[2025-05-07 03:31:58] - Training/buffer_done/update_global_critic_net: critic_loss=0.2106294184923172 
+[2025-05-07 03:31:59] - Training/buffer_done/update_1_epoch_done: --------Update K_epoch: 5/5, ReplayBuffer: every 36 in range(0, 180),  job_actor_loss=0.0857020691037178, machine_actor_loss=0.06248270347714424, global_critic_loss=0.4700795114040375-------- 
+[2025-05-07 03:31:59] - Training/buffer_done/update_all_epoch_done: Mean: job_actor_loss=0.09868086129426956, machine_actor_loss=0.10287793725728989, global_critic_loss=0.5124592781066895 
+[2025-05-07 03:31:59] - Training/while/buffer_done/update_done: Update Done on episode 4000/4000 
+[2025-05-07 03:31:59] - Training/while/done: Trajectory Done (step = tasks) episode 4000/4000  
+[2025-05-07 03:32:00] - Evaluation/eval_instance_last: va_ability_t=(36, 6), va_ability_p=(36, 6), va_ability_tt=(6, 6), va_edge_info=(2, 3) 
+[2025-05-07 03:32:00] - Evaluation/done: Objective=749.6237763734263, mk=515.1284380824453, pt=496.70147669051283, transT=276.759151531769, idleT=723.8499503947231 
+[2025-05-07 03:32:01] - Evaluation/last_instance: Objective=749.6237763734263, eval_obj_gap=0.7379396821119705, mk=515.1284380824453, pt=496.70147669051283, transT=276.759151531769, idleT=723.8499503947231 
+[2025-05-07 03:32:01] - Evaluation/100instances/each_episode_result: ----------episode=3999, obj_100ins_mean=735.8498640646264, mk_100ins_mean=533.2458758511157, pt_100ins_mean=525.5592612566604, transT_100ins_mean=260.00874048117464, idleT_100ins_mean=650.8151528132025------------------------ 
+[2025-05-07 03:32:02] - Training/resample_instance: --------------------Instance Sample：12800/12800--------------- 
+[2025-05-07 03:32:02] - Training/current_instance: bs_idx=799, instance_bs_dict['t'].shape=torch.Size([16, 36, 6]) 
+[2025-05-07 03:32:03] - Training/Parallel_env/get_batch_scenario: job=6, machine=6, edge=2, tasks=36 
+[2025-05-07 03:32:03] - Training/Parallel_env/get_batch_info: self.ability_instance=(16, 4), t[0].shape=(36, 6), p[0].shape=(36, 6), transT[0].shape=(6, 6) 
+[2025-05-07 03:32:03] - Training/resample_status: Now is paral_env.get_batch + paral_env.init_RewardScaling_sameBATCH 
+[2025-05-07 03:32:04] - Training/while/buffer_done/update: ++++++++++++++++++++++++++++ ppo update 800/800 buffer_size=180||mini_bs=36||Date_freq_epi=5 ++++++++++++++++++++++++++++ 
+[2025-05-07 03:32:04] - Training/buffer_done/adv_targetV: Calculate the Local/Global Adv and TargetV based on GAE 
+[2025-05-07 03:32:05] - Evaluation/save model.pth: Final and TOP3 Best model parameters saved. Best_model=(-690.3617323081721, '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_job_actor_J6M6E2_EP3500_.pth', '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_machine_actor_J6M6E2_EP3500_.pth', '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_global_critic_J6M6E2_EP3500_.pth') 
+[2025-05-07 03:32:05] - Training/All_episode/save_buffer_trajectory: save trajectory in /remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trajectory/Trajectory_4000_J6M6E2_Seed0_BS16_Weight442.pkl.pkl' 
+
+==========================================================================================================================================================================================================================================================
+[2025-05-08 03:42:26] - Training/buffer_done/actor_loss: job_actor_loss=torch.Size([36, 16]), machine_actor_loss=torch.Size([36, 16]) 
+[2025-05-08 03:42:26] - Training/buffer_done/update_actor_net: loss = job_actor_loss.mean() + machine_actor_loss.mean() = 1.6658847332000732 
+[2025-05-08 03:42:26] - Training/buffer_done/update_global_critic_net: critic_loss=1.0054028034210205 
+[2025-05-08 03:42:27] - Training/buffer_done/update_1_epoch_done: --------Update K_epoch: 5/5, ReplayBuffer: every 36 in range(0, 180),  job_actor_loss=0.12887784838676453, machine_actor_loss=0.0610373392701149, global_critic_loss=0.554480254650116-------- 
+[2025-05-08 03:42:27] - Training/buffer_done/update_all_epoch_done: Mean: job_actor_loss=0.13937552273273468, machine_actor_loss=0.10157670825719833, global_critic_loss=0.5947149991989136 
+[2025-05-08 03:42:28] - Training/while/buffer_done/update_done: Update Done on episode 4000/4000 
+[2025-05-08 03:42:28] - Training/while/done: Trajectory Done (step = tasks) episode 4000/4000  
+[2025-05-08 03:42:28] - Evaluation/eval_instance_last: va_ability_t=(36, 6), va_ability_p=(36, 6), va_ability_tt=(6, 6), va_edge_info=(2, 3) 
+[2025-05-08 03:42:28] - Evaluation/done: Objective=790.4202619256572, mk=531.3846754110783, pt=511.5315251945739, transT=266.7776569425066, idleT=799.7456257372373 
+[2025-05-08 03:42:29] - Evaluation/last_instance: Objective=790.4202619256572, eval_obj_gap=0.8299788643295541, mk=531.3846754110783, pt=511.5315251945739, transT=266.7776569425066, idleT=799.7456257372373 
+[2025-05-08 03:42:29] - Evaluation/100instances/each_episode_result: ----------episode=3999, obj_100ins_mean=717.8948341998012, mk_100ins_mean=524.9989155466579, pt_100ins_mean=525.539743676408, transT_100ins_mean=269.44802379176474, idleT_100ins_mean=609.4744143805548------------------------ 
+[2025-05-08 03:42:29] - Training/resample_instance: --------------------Instance Sample：12800/12800--------------- 
+[2025-05-08 03:42:30] - Training/current_instance: bs_idx=799, instance_bs_dict['t'].shape=torch.Size([16, 36, 6]) 
+[2025-05-08 03:42:30] - Training/Parallel_env/get_batch_scenario: job=6, machine=6, edge=2, tasks=36 
+[2025-05-08 03:42:31] - Training/Parallel_env/get_batch_info: self.ability_instance=(16, 4), t[0].shape=(36, 6), p[0].shape=(36, 6), transT[0].shape=(6, 6) 
+[2025-05-08 03:42:31] - Training/resample_status: Now is paral_env.get_batch + paral_env.init_RewardScaling_sameBATCH 
+[2025-05-08 03:42:31] - Training/while/buffer_done/update: ++++++++++++++++++++++++++++ ppo update 800/800 buffer_size=180||mini_bs=36||Date_freq_epi=5 ++++++++++++++++++++++++++++ 
+[2025-05-08 03:42:32] - Training/buffer_done/adv_targetV: Calculate the Local/Global Adv and TargetV based on GAE 
+[2025-05-08 03:42:32] - Evaluation/save model.pth: Final and TOP3 Best model parameters saved. Best_model=(-672.6699040385568, '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_job_actor_J6M6E2_EP3820_.pth', '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_machine_actor_J6M6E2_EP3820_.pth', '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_global_critic_J6M6E2_EP3820_.pth') 
+[2025-05-08 03:42:33] - Training/All_episode/save_buffer_trajectory: save trajectory in /remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trajectory/Trajectory_4000_J6M6E2_Seed0_BS16_Weight442.pkl.pkl' 
+
+==========================================================================================================================================================================================================================================================
+[2025-05-09 09:48:56] - Training/buffer_done/actor_loss: job_actor_loss=torch.Size([36, 16]), machine_actor_loss=torch.Size([36, 16]) 
+[2025-05-09 09:48:57] - Training/buffer_done/update_actor_net: loss = job_actor_loss.mean() + machine_actor_loss.mean() = 1.8655924797058105 
+[2025-05-09 09:48:57] - Training/buffer_done/update_global_critic_net: critic_loss=0.6476311683654785 
+[2025-05-09 09:48:58] - Training/buffer_done/update_1_epoch_done: --------Update K_epoch: 5/5, ReplayBuffer: every 36 in range(0, 180),  job_actor_loss=0.051892805844545364, machine_actor_loss=0.04827473312616348, global_critic_loss=0.5011357665061951-------- 
+[2025-05-09 09:48:58] - Training/buffer_done/update_all_epoch_done: Mean: job_actor_loss=0.09740089625120163, machine_actor_loss=0.09546102583408356, global_critic_loss=0.5297871828079224 
+[2025-05-09 09:48:59] - Training/while/buffer_done/update_done: Update Done on episode 4000/4000 
+[2025-05-09 09:48:59] - Training/while/done: Trajectory Done (step = tasks) episode 4000/4000  
+[2025-05-09 09:48:59] - Evaluation/eval_instance_last: va_ability_t=(36, 6), va_ability_p=(36, 6), va_ability_tt=(6, 6), va_edge_info=(2, 3) 
+[2025-05-09 09:48:59] - Evaluation/done: Objective=1035.8482874841025, mk=770.9519116007633, pt=508.41833398521624, transT=219.4826550375993, idleT=1200.509145605477 
+[2025-05-09 09:49:00] - Evaluation/last_instance: Objective=1035.8482874841025, eval_obj_gap=1.425234817842952, mk=770.9519116007633, pt=508.41833398521624, transT=219.4826550375993, idleT=1200.509145605477 
+[2025-05-09 09:49:00] - Evaluation/100instances/each_episode_result: ----------episode=3999, obj_100ins_mean=979.2857402825857, mk_100ins_mean=706.0731857559662, pt_100ins_mean=524.6924970845339, transT_100ins_mean=238.8774275030672, idleT_100ins_mean=1098.0099541144307------------------------ 
+[2025-05-09 09:49:00] - Training/resample_instance: --------------------Instance Sample：12800/12800--------------- 
+[2025-05-09 09:49:01] - Training/current_instance: bs_idx=799, instance_bs_dict['t'].shape=torch.Size([16, 36, 6]) 
+[2025-05-09 09:49:01] - Training/Parallel_env/get_batch_scenario: job=6, machine=6, edge=2, tasks=36 
+[2025-05-09 09:49:02] - Training/Parallel_env/get_batch_info: self.ability_instance=(16, 4), t[0].shape=(36, 6), p[0].shape=(36, 6), transT[0].shape=(6, 6) 
+[2025-05-09 09:49:02] - Training/resample_status: Now is paral_env.get_batch + paral_env.init_RewardScaling_sameBATCH 
+[2025-05-09 09:49:02] - Training/while/buffer_done/update: ++++++++++++++++++++++++++++ ppo update 800/800 buffer_size=180||mini_bs=36||Date_freq_epi=5 ++++++++++++++++++++++++++++ 
+[2025-05-09 09:49:03] - Training/buffer_done/adv_targetV: Calculate the Local/Global Adv and TargetV based on GAE 
+[2025-05-09 09:49:03] - Evaluation/save model.pth: Final and TOP3 Best model parameters saved. Best_model=(-957.7976995798268, '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_job_actor_J6M6E2_EP290_.pth', '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_machine_actor_J6M6E2_EP290_.pth', '/remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trained_model/PPO_global_critic_J6M6E2_EP290_.pth') 
+[2025-05-09 09:49:04] - Training/All_episode/save_buffer_trajectory: save trajectory in /remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/trajectory/Trajectory_4000_J6M6E2_Seed0_BS16_Weight442.pkl.pkl' 

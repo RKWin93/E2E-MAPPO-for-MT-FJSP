@@ -1,0 +1,17 @@
+{
+    "ability_scope": {
+        "t_low": 1,
+        "t_high": 99,
+        "p_low": 1,
+        "p_high": 20,
+        "transT_in_low": 1,
+        "transT_in_high": 10,
+        "transT_out_low": 1,
+        "transT_out_high": 20,
+        "equal_edge": true,
+        "weight_low": 0.8,
+        "weight_high": 1.2,
+        "e1_low": 1,
+        "e1_high": 99
+    }
+}

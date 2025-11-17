@@ -1,0 +1,931 @@
+
+==========================================================================================================================================================================================================================================================
+[2025-05-11 18:12:18] - Training/device: device=cuda:1, torch.cuda.set_devicecuda:1 
+[2025-05-11 18:12:25] - instances/load_pkl: load instance from /remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/instance/test_Instance_J6M6E2.pkl.pkl' 
+[2025-05-11 18:12:25] - Testing/instance: ========== test_instance.t[-1]=(36, 6) ========== 
+[2025-05-11 18:12:26] - Training/ppo/init_job_encoder: GIN + MLP: self.encoder=Encoder(
+  (feature_extract): GraphCNN(
+    (mlps): ModuleList(
+      (0): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=12, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (batch_norms): ModuleList(
+      (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+) 
+[2025-05-11 18:12:26] - Training/ppo/init_job_actor: MLP: self.o_policy=MLPActor(
+  (linears): ModuleList(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+) 
+[2025-05-11 18:12:26] - Training/ppo/init_job_critic: MLP: self.job_critic=MLPCritic(
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=2, bias=True)
+  )
+) 
+[2025-05-11 18:12:26] - Training/ppo/init_machine_GAT: GAT+Linear: self.gat_layer=GATLayer(
+  (leakyrelu): LeakyReLU(negative_slope=0.2)
+  (softmax): Softmax(dim=1)
+) 
+[2025-05-11 18:12:26] - Training/ppo/init_machine_actor: MLP: self.fcl_pooling=Linear(in_features=128, out_features=128, bias=False), self.m_policy=MLPActor(
+  (linears): ModuleList(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+) 
+[2025-05-11 18:12:26] - Training/ppo/init_machine_critic: MLP: self.machine_critic=MLPCritic(
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=2, bias=True)
+  )
+) 
+[2025-05-11 18:12:26] - Training/ppo/init_global_critic_encoder: Global_Critic: self.encoder=Encoder(
+  (feature_extract): GraphCNN(
+    (mlps): ModuleList(
+      (0): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=12, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (batch_norms): ModuleList(
+      (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+) 
+[2025-05-11 18:12:26] - Training/ppo/init_global_gat_layer: Global_Critic: self.gat_layer=GATLayer(
+  (leakyrelu): LeakyReLU(negative_slope=0.2)
+  (softmax): Softmax(dim=1)
+) 
+[2025-05-11 18:12:26] - Training/ppo/network_architecture: Operation_Actor: self.job_actor=Operation_Actor_JointAction_selfCritic(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (o_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (job_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+), Machine_Actor: self.machine_actor_gcn=Machine_Actor_JointAction_selfGAT_selfCritic(
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (m_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (machine_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+), Global_Critic: self.global_critic=Global_Critic_JointAction_GAT(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=256, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+) 
+[2025-05-11 18:12:26] - Training/ppo/esa/network_architecture: Operation_Actor: self.esa_job_actor=esa_Operation_Actor_Critic(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (o_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (job_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+), Machine_Actor: self.esa_machine_actor_gcn=esa_Machine_Actor(
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (m_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=512, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (machine_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+) 
+[2025-05-11 18:12:26] - Testing/12800ins-ppo: sample=1, Obj=728.8458596410267/MIP=629.7166456298773, mk=487.41970507342575/MIP=370.93404461036727, pt=524.0186734742431/MIP=527.091346363244, it=670.1718465372921/MIP=592.3161758430091, tt=281.00884803521126/MIP=167.90009451614574 
+[2025-05-11 18:12:26] - Testing/P-G: sample=1, Obj=727.9953330913095/MIP=629.7166456298773, mk=552.359023031114/MIP=370.93404461036727, pt=548.6912869921828/MIP=527.091346363244, it=568.9019098343765/MIP=592.3161758430091, tt=300.0722257412008/MIP=167.90009451614574 
+[2025-05-11 18:12:26] - Testing/P-S: sample=1, Obj=805.8429119869343/MIP=629.7166456298773, mk=463.40232561190965/MIP=370.93404461036727, pt=521.9189014140409/MIP=527.091346363244, it=896.8504131372309/MIP=592.3161758430091, tt=264.8712796083091/MIP=167.90009451614574 
+[2025-05-11 18:12:26] - Testing/ESA: sample=1, Obj=825.6516276167043/MIP=629.7166456298773, mk=558.6304952334704/MIP=370.93404461036727, pt=468.14953396331083/MIP=527.091346363244, it=910.5584075688905/MIP=592.3161758430091, tt=253.5812645521779/MIP=167.90009451614574 
+[2025-05-11 18:12:26] - Testing/PDRs: sample=1, [RA,RA], Obj=1761.955800899153/MIP=629.7166456298773, mk=924.3514719651613/MIP=370.93404461036727, pt=541.8346088363519/MIP=527.091346363244, it=2794.6151010648027/MIP=592.3161758430091, tt=288.17664076313184/MIP=167.90009451614574 
+[2025-05-11 18:12:26] - Testing/result_each_episode: sample=1, realtime_mean_Obj_allmethods=[3001.8, 2759.6, 885.0, 987.7, 2300.3, 2271.8, 2664.3, 2599.4, 1240.7, 1082.6, 1126.4, 1115.7, 1638.6, 617.3, 683.6, 785.8, 784.0, 662.3],realtime_mean_Obj_4rgap_allmethods=[4.7, 4.3, 0.7, 1.0, 3.3, 3.4, 4.0, 4.0, 1.4, 1.2, 1.2, 1.2, 2.2, 0.0, 0.3, 0.6, 0.6, 0.4] 
+[2025-05-11 18:12:26] - Testing/result_inference_time: sample=1, realtime_mean_time_allmethods=[0.207, 0.218, 0.21, 0.197, 0.23, 0.245, 0.233, 0.242, 0.219, 0.189, 0.186, 0.219, 0.148, 6.095, 1.546, 1.768, 1.551, 2.121],realtime_std_Obj_allmethods=[261.9, 650.5, 109.9, 3.9, 234.3, 220.4, 78.1, 685.1, 13.4, 103.7, 103.5, 32.9, 123.4, 12.4, 142.0, 57.8, 21.9, 66.5] 
+
+==========================================================================================================================================================================================================================================================
+[2025-05-11 18:25:44] - Training/device: device=cuda:1, torch.cuda.set_devicecuda:1 
+[2025-05-11 18:25:54] - instances/load_pkl: load instance from /remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/instance/test_Instance_J6M6E2.pkl.pkl' 
+[2025-05-11 18:25:54] - Testing/instance: ========== test_instance.t[-1]=(36, 6) ========== 
+[2025-05-11 18:25:55] - Training/ppo/init_job_encoder: GIN + MLP: self.encoder=Encoder(
+  (feature_extract): GraphCNN(
+    (mlps): ModuleList(
+      (0): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=12, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (batch_norms): ModuleList(
+      (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+) 
+[2025-05-11 18:25:55] - Training/ppo/init_job_actor: MLP: self.o_policy=MLPActor(
+  (linears): ModuleList(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+) 
+[2025-05-11 18:25:55] - Training/ppo/init_job_critic: MLP: self.job_critic=MLPCritic(
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=2, bias=True)
+  )
+) 
+[2025-05-11 18:25:55] - Training/ppo/init_machine_GAT: GAT+Linear: self.gat_layer=GATLayer(
+  (leakyrelu): LeakyReLU(negative_slope=0.2)
+  (softmax): Softmax(dim=1)
+) 
+[2025-05-11 18:25:55] - Training/ppo/init_machine_actor: MLP: self.fcl_pooling=Linear(in_features=128, out_features=128, bias=False), self.m_policy=MLPActor(
+  (linears): ModuleList(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+) 
+[2025-05-11 18:25:55] - Training/ppo/init_machine_critic: MLP: self.machine_critic=MLPCritic(
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=2, bias=True)
+  )
+) 
+[2025-05-11 18:25:55] - Training/ppo/init_global_critic_encoder: Global_Critic: self.encoder=Encoder(
+  (feature_extract): GraphCNN(
+    (mlps): ModuleList(
+      (0): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=12, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (batch_norms): ModuleList(
+      (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+) 
+[2025-05-11 18:25:55] - Training/ppo/init_global_gat_layer: Global_Critic: self.gat_layer=GATLayer(
+  (leakyrelu): LeakyReLU(negative_slope=0.2)
+  (softmax): Softmax(dim=1)
+) 
+[2025-05-11 18:25:55] - Training/ppo/network_architecture: Operation_Actor: self.job_actor=Operation_Actor_JointAction_selfCritic(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (o_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (job_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+), Machine_Actor: self.machine_actor_gcn=Machine_Actor_JointAction_selfGAT_selfCritic(
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (m_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (machine_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+), Global_Critic: self.global_critic=Global_Critic_JointAction_GAT(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=256, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+) 
+[2025-05-11 18:25:55] - Training/ppo/esa/network_architecture: Operation_Actor: self.esa_job_actor=esa_Operation_Actor_Critic(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (o_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (job_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+), Machine_Actor: self.esa_machine_actor_gcn=esa_Machine_Actor(
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (m_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=512, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (machine_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+) 
+[2025-05-11 18:25:55] - Testing/12800ins-ppo: sample=1, Obj=728.8458596410267/MIP=629.7166456298773, mk=487.41970507342575/MIP=370.93404461036727, pt=524.0186734742431/MIP=527.091346363244, it=670.1718465372921/MIP=592.3161758430091, tt=281.00884803521126/MIP=167.90009451614574 
+[2025-05-11 18:25:55] - Testing/P-G: sample=1, Obj=727.9953330913095/MIP=629.7166456298773, mk=552.359023031114/MIP=370.93404461036727, pt=548.6912869921828/MIP=527.091346363244, it=568.9019098343765/MIP=592.3161758430091, tt=300.0722257412008/MIP=167.90009451614574 
+[2025-05-11 18:25:55] - Testing/P-S: sample=1, Obj=625.4213895793679/MIP=629.7166456298773, mk=495.5261653837398/MIP=370.93404461036727, pt=508.6992653644703/MIP=527.091346363244, it=406.70551662551077/MIP=592.3161758430091, tt=305.2450531493972/MIP=167.90009451614574 
+[2025-05-11 18:25:55] - Testing/ESA: sample=1, Obj=825.6516276167043/MIP=629.7166456298773, mk=558.6304952334704/MIP=370.93404461036727, pt=468.14953396331083/MIP=527.091346363244, it=910.5584075688905/MIP=592.3161758430091, tt=253.5812645521779/MIP=167.90009451614574 
+[2025-05-11 18:25:55] - Testing/PDRs: sample=1, [RA,RA], Obj=1607.3109190734556/MIP=629.7166456298773, mk=828.1682857164459/MIP=370.93404461036727, pt=544.851819749026/MIP=527.091346363244, it=2535.984065597028/MIP=592.3161758430091, tt=218.54625324227788/MIP=167.90009451614574 
+[2025-05-11 18:25:55] - Testing/result_each_episode: sample=1, realtime_mean_Obj_allmethods=[3001.8, 2759.6, 1142.9, 870.9, 2300.3, 2271.8, 2664.3, 2599.4, 1240.7, 1082.6, 1126.4, 1115.7, 1632.6, 617.3, 683.6, 785.8, 684.9, 662.3],realtime_mean_Obj_4rgap_allmethods=[4.7, 4.3, 1.2, 0.8, 3.3, 3.4, 4.0, 4.0, 1.4, 1.2, 1.2, 1.2, 2.2, 0.0, 0.3, 0.6, 0.4, 0.4] 
+[2025-05-11 18:25:56] - Testing/result_inference_time: sample=1, realtime_mean_time_allmethods=[0.19, 0.218, 0.193, 0.216, 0.207, 0.212, 0.216, 0.243, 0.263, 0.231, 0.212, 0.224, 0.245, 6.095, 0.992, 1.24, 0.961, 1.82],realtime_std_Obj_allmethods=[261.9, 650.5, 55.9, 5.5, 234.3, 220.4, 78.1, 685.1, 13.4, 103.7, 103.5, 32.9, 25.3, 12.4, 142.0, 57.8, 59.5, 66.5] 
+
+==========================================================================================================================================================================================================================================================
+[2025-05-11 18:29:22] - Training/device: device=cuda:1, torch.cuda.set_devicecuda:1 
+[2025-05-11 18:29:33] - instances/load_pkl: load instance from /remote-home/iot_wangrongkai/FJSP-LLM-250327/20241229-DTr-FJSP/MOFJSP-DRL/instance/test_Instance_J6M6E2.pkl.pkl' 
+[2025-05-11 18:29:33] - Testing/instance: ========== test_instance.t[-1]=(36, 6) ========== 
+[2025-05-11 18:29:34] - Training/ppo/init_job_encoder: GIN + MLP: self.encoder=Encoder(
+  (feature_extract): GraphCNN(
+    (mlps): ModuleList(
+      (0): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=12, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (batch_norms): ModuleList(
+      (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+) 
+[2025-05-11 18:29:34] - Training/ppo/init_job_actor: MLP: self.o_policy=MLPActor(
+  (linears): ModuleList(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+) 
+[2025-05-11 18:29:34] - Training/ppo/init_job_critic: MLP: self.job_critic=MLPCritic(
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=2, bias=True)
+  )
+) 
+[2025-05-11 18:29:34] - Training/ppo/init_machine_GAT: GAT+Linear: self.gat_layer=GATLayer(
+  (leakyrelu): LeakyReLU(negative_slope=0.2)
+  (softmax): Softmax(dim=1)
+) 
+[2025-05-11 18:29:34] - Training/ppo/init_machine_actor: MLP: self.fcl_pooling=Linear(in_features=128, out_features=128, bias=False), self.m_policy=MLPActor(
+  (linears): ModuleList(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=1, bias=True)
+  )
+) 
+[2025-05-11 18:29:34] - Training/ppo/init_machine_critic: MLP: self.machine_critic=MLPCritic(
+  (linears): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=2, bias=True)
+  )
+) 
+[2025-05-11 18:29:34] - Training/ppo/init_global_critic_encoder: Global_Critic: self.encoder=Encoder(
+  (feature_extract): GraphCNN(
+    (mlps): ModuleList(
+      (0): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=12, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): MLP(
+        (linears): ModuleList(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): Linear(in_features=128, out_features=128, bias=True)
+          (2): Linear(in_features=128, out_features=128, bias=True)
+        )
+        (batch_norms): ModuleList(
+          (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (batch_norms): ModuleList(
+      (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+) 
+[2025-05-11 18:29:34] - Training/ppo/init_global_gat_layer: Global_Critic: self.gat_layer=GATLayer(
+  (leakyrelu): LeakyReLU(negative_slope=0.2)
+  (softmax): Softmax(dim=1)
+) 
+[2025-05-11 18:29:34] - Training/ppo/network_architecture: Operation_Actor: self.job_actor=Operation_Actor_JointAction_selfCritic(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (o_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (job_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+), Machine_Actor: self.machine_actor_gcn=Machine_Actor_JointAction_selfGAT_selfCritic(
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (m_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (machine_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+), Global_Critic: self.global_critic=Global_Critic_JointAction_GAT(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=256, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+) 
+[2025-05-11 18:29:34] - Training/ppo/esa/network_architecture: Operation_Actor: self.esa_job_actor=esa_Operation_Actor_Critic(
+  (encoder): Encoder(
+    (feature_extract): GraphCNN(
+      (mlps): ModuleList(
+        (0): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=12, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): MLP(
+          (linears): ModuleList(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+          )
+          (batch_norms): ModuleList(
+            (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (bn): BatchNorm1d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (batch_norms): ModuleList(
+        (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (o_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=384, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (job_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+), Machine_Actor: self.esa_machine_actor_gcn=esa_Machine_Actor(
+  (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (m_fea_1_fcl): Linear(in_features=6, out_features=128, bias=False)
+  (m_fea_2_fcl): Linear(in_features=8, out_features=128, bias=False)
+  (activation): ELU(alpha=1.0)
+  (gat_layer): GATLayer(
+    (leakyrelu): LeakyReLU(negative_slope=0.2)
+    (softmax): Softmax(dim=1)
+  )
+  (fcl_pooling): Linear(in_features=128, out_features=128, bias=False)
+  (m_policy): MLPActor(
+    (linears): ModuleList(
+      (0): Linear(in_features=512, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+  (machine_critic): MLPCritic(
+    (linears): ModuleList(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): Linear(in_features=128, out_features=128, bias=True)
+      (2): Linear(in_features=128, out_features=2, bias=True)
+    )
+  )
+) 
+[2025-05-11 18:29:34] - Testing/12800ins-ppo: sample=99, Obj=945.6115403314041/MIP=629.4316784804978, mk=641.2519884166203/MIP=412.40880015331635, pt=677.1330401562916/MIP=644.5758848276885, it=917.4954105564051/MIP=422.9163984817781, tt=256.29682339838587/MIP=187.35622547692248 
+[2025-05-11 18:29:34] - Testing/P-G: sample=99, Obj=807.8805443207061/MIP=629.4316784804978, mk=611.4191832097839/MIP=412.40880015331635, pt=689.7064002656775/MIP=644.5758848276885, it=565.2314078447762/MIP=422.9163984817781, tt=306.68873896305536/MIP=187.35622547692248 
+[2025-05-11 18:29:34] - Testing/P-S: sample=99, Obj=758.664284794846/MIP=629.4316784804978, mk=583.4540423075756/MIP=412.40880015331635, pt=661.3628948015429/MIP=644.5758848276885, it=496.6426795657761/MIP=422.9163984817781, tt=310.40219062444083/MIP=187.35622547692248 
+[2025-05-11 18:29:34] - Testing/ESA: sample=99, Obj=970.019214427015/MIP=629.4316784804978, mk=677.8156848471608/MIP=412.40880015331635, pt=583.5448168166577/MIP=644.5758848276885, it=1034.377688524582/MIP=422.9163984817781, tt=258.6196917582734/MIP=187.35622547692248 
+[2025-05-11 18:29:34] - Testing/PDRs: sample=99, [RA,RA], Obj=1516.7064898382223/MIP=629.4316784804978, mk=881.2278270642017/MIP=412.40880015331635, pt=660.6659989586882/MIP=644.5758848276885, it=2125.2392008423426/MIP=422.9163984817781, tt=249.26639546064544/MIP=187.35622547692248 
+[2025-05-11 18:29:34] - Testing/result_each_episode: sample=99, realtime_mean_Obj_allmethods=[2894.5, 2927.1, 1050.3, 1079.1, 2790.4, 2816.0, 2829.9, 2834.7, 1147.2, 1189.3, 1357.1, 1348.7, 1552.2, 585.8, 874.5, 732.5, 742.9, 663.6],realtime_mean_Obj_4rgap_allmethods=[5.3, 5.4, 1.3, 1.3, 5.2, 5.2, 5.2, 5.2, 1.5, 1.6, 1.9, 1.9, 2.4, 0.0, 0.9, 0.6, 0.6, 0.4] 
+[2025-05-11 18:29:34] - Testing/result_inference_time: sample=99, realtime_mean_time_allmethods=[0.202, 0.194, 0.2, 0.201, 0.203, 0.207, 0.197, 0.202, 0.197, 0.199, 0.196, 0.195, 0.201, 18.34, 1.438, 1.599, 1.488, 1.66],realtime_std_Obj_allmethods=[541.0, 587.1, 176.6, 193.0, 576.3, 577.7, 551.7, 596.1, 182.6, 230.8, 208.0, 232.8, 277.8, 82.7, 140.8, 96.8, 98.4, 93.8] 
+[2025-05-11 18:29:34] - Evaluation/eval_instance_last: va_ability_t=(36, 6), va_ability_p=(36, 6), va_ability_tt=(6, 6), va_edge_info=(2, 3) 
