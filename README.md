@@ -11,7 +11,7 @@ Official implementation for "End-to-end Multi-target Flexible Job Shop Schedulin
 
 - **10.20.2024**: Accept! Code is coming soon !!!
 - **12.31.2024**: Update Poster for quick understanding.
-- **11.17.2025**: Code updata with Chinese annotation. (Sorry, the update is a bit late)
+- **11.17.2025**: Code update with Chinese annotation. (Sorry, the update is a bit late)
 
 ## Introduction 
 Modeling and solving the Flexible Job Shop Scheduling Problem (FJSP) is critical for modern manufacturing. However, existing works primarily focus on the time-related makespan target, often neglecting other practical factors such as transportation. To address this, we formulate a more comprehensive multi-target FJSP that integrates makespan with varied transportation times and the total energy consumption of processing and transportation. The combination of these multiple real-world production targets renders the scheduling problem highly complex and challenging to solve. To overcome this challenge, this paper proposes an end-to-end multi-agent proximal policy optimization (PPO) approach. First, we represent the scheduling problem as a disjunctive graph with designed features of sub-tasks and constructed machine nodes, additionally integrating information of arcs denoted as transportation and standby time, respectively. Next, we use a graph neural network (GNN) to encode features into node embeddings, representing the states at each decision step. Finally, based on the vectorized value function and local critic networks, the PPO algorithm and disjunctive graph simulation environment iteratively interact to train the policy network. Our extensive experimental results validate the performance of the proposed approach, demonstrating its superiority over the state-of-the-art in terms of high-quality solutions, online computation time, stability, and generalization.
@@ -59,11 +59,7 @@ The Simulated Environments for Disjunctive Graph of MT-FJSP {4 jobs(each 4 sub-t
 ![ENV-DG+Gantt](./Assets/加速2.gif) 
 
 ## How to Run
-### Generate the dataset 
-Generate the dataset below:
-Take xxxxx for example
-
-Structure of xxx Folder:
+### Structure of E2E-MAPPO-for-MT-FJSP:
 ```
 xxx/
 │
@@ -72,31 +68,26 @@ xxx/
 └── ...
 ```
 
-```bash
-cd xxxx
-python xxxx.py
+### Generate the dataset 
+* Generate the MO-FJSP instance dataset below: 
+```
+1.*Change all path* to your local project path
+
+2.*Run* generate_allsize_mofjsp_dataset.py 
 ```
 
-### Run E2E-MAPPO
+### Train your own model
 * Quick start 
-```bash
-xxxxxx
 ```
-  
-* Train your own model
-```bash
-xxxxxxxx
+1.*Change all path* to your local project path
+
+2.*Run* Run.py 
 ```
 
+## Thanks 
 
-
-
-
-## We provide the reproduction of  [here]() 
-
-
-* We re-program the DRL environment for multi-rewards feedback and single-step selection for FJSP. We thank for the code repository: [xxxx](xxxx)
-* We thank for the code repository multi-policy DRL [xxxx](xxxx)
+* We re-program the DRL environment for multi-rewards feedback and single-step selection for FJSP. We thank for the code repository: [graph-jsp-env](https://github.com/Alexander-Nasuta/graph-jsp-env)
+* We thank for the code repository multi-policy DRL [End-to-end-DRL-for-FJSP](https://github.com/Lei-Kun/End-to-end-DRL-for-FJSP)
 
 
 ## BibTex Citation
