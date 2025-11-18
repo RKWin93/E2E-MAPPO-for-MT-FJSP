@@ -73,8 +73,6 @@ def experiment(
         # wandb.watch(model)  # wandb has some bug
         
     
-    #####################################################################  以下需要重新整理和简化，高度集成化 + 简约+ 方便查看和记录+参考他人优秀写法
-    
     ppo = PPOAlgorithm(args=variant, load_pretrained=False)
     
     
@@ -876,22 +874,3 @@ if __name__ == '__main__':
     
     print('=' * 250)
     
-    
-    """
-    12800跑完，都收敛，只不过结果有好有坏而已（eval_mean有大有小）！可以开源！
-    
-    source ~/.bashrc   使生效
-    conda activate LLM  进环境
-    proxy_on  打开代理，注意ip要windows的ip
-    env | grep -i proxy   检查代理ip对不
-    curl -I www.baidu.com   测试连接
-    curl -I www.google.com
-    
-    Tmux = 注意先在终端运行，再开
-    tmux new -s xxxx
-    tmux ls  查看会话
-    ctrl+b,d 分离
-    ctrl+b，[, 上下箭头和光标都可以滚动窗口内容
-    tmux attach -t xxxx
-    tmux kill-session -t xxxx
-    """
